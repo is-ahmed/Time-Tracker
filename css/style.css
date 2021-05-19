@@ -1,0 +1,21 @@
+body {
+    min-width:300px;
+
+}
+
+.container {
+   display: flex;
+   flex-direction: row;
+   gap: 20px;
+   align-items: center;
+}
+
+.time {
+    font-family: monospace;
+    font-size: medium;
+}
+
+.logos {
+    height: 50px;
+    width: 50px;
+}
