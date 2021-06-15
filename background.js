@@ -1,6 +1,11 @@
-chrome.tabs.query({active: true, currentWindow: true}, function(tabs){
 
-    var activeTab = tabs[0];
-    var activeTabUrl = activeTab.url;
-    alert(activeTabUrl);
-})
+function onVisited(historyItem){
+  console.log(historyItem.url);
+
+  chrome.storage.sync.set({key: historyItem.visitCount}, function(){
+    console.log('Value is set to ' + historyItem.visitCount);
+  });
+}
+
+chrome.history.onVisited.addListener(onVisited);
+
